@@ -12,41 +12,41 @@ logic[`DW*2-1:0]RES;
 logic ERR,OFLOW,COUT,G,E,L;
 
 clocking drv_cb@(posedge clk);
-        default input #1 output #1;
-        output OPA;
-        output OPB;
-        output INP_VALID;
-        output CMD;
-        output MODE,CIN,CE;
+default input #1 output #1;
+output OPA;
+output OPB;
+output INP_VALID;
+output CMD;
+output MODE,CIN,CE;
 endclocking
 
 clocking in_mon_cb@(posedge clk);
-        default input #1 output #1;
-        input OPA;
-        input OPB;
-        input INP_VALID;
-        input CMD;
-        input MODE;
-        input CIN;
-        input CE;
+default input #1 output #1;
+input OPA;
+input OPB;
+input INP_VALID;
+input CMD;
+input MODE;
+input CIN;
+input CE;
 endclocking
 
-  clocking out_mon_cb@(posedge clk);
-        default input #1 output #1;
-        input OPA;
-        input OPB;
-        input INP_VALID;
-        input CMD;
-        input MODE;
-        input CIN;
-        input CE;
-        input ERR;
-        input RES;
-        input OFLOW;
-        input COUT;
-        input G;
-        input E;
-        input L;
+clocking out_mon_cb@(posedge clk);
+default input #1 output #1;
+input OPA;
+input OPB;
+input INP_VALID;
+input CMD;
+input MODE;
+input CIN;
+input CE;
+input ERR;
+input RES;
+input OFLOW;
+input COUT;
+input G;
+input E;
+input L;
 endclocking
 
 modport DRV(input clk, rst, clocking drv_cb);
